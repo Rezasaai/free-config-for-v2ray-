@@ -1,0 +1,676 @@
+//profile-title: base64:Q09OVkVSVEVEIEJZIFRWQw==
+//profile-update-interval: 1
+//subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531
+//support-url: https://t.me/v2raycollector
+//profile-web-page-url: https://github.com/yebekhe/TelegramV2rayCollector
+
+{
+    "log": {
+        "disabled": false,
+        "level": "fatal",
+        "timestamp": true
+    },
+    "experimental": {
+        "clash_api": {
+            "external_controller": "0.0.0.0:9090",
+            "external_ui": "yacd",
+            "external_ui_download_url": "https:\/\/github.com\/MetaCubeX\/Yacd-meta\/archive\/gh-pages.zip",
+            "external_ui_download_detour": "direct",
+            "secret": "",
+            "default_mode": "rule"
+        }
+    },
+    "dns": {
+        "servers": [
+            {
+                "address": "tcp:\/\/95.85.95.85",
+                "address_resolver": "dns-direct",
+                "strategy": "ipv4_only",
+                "tag": "dns-remote"
+            },
+            {
+                "address": "tcp:\/\/95.85.95.85",
+                "address_resolver": "dns-local",
+                "detour": "direct",
+                "strategy": "ipv4_only",
+                "tag": "dns-direct"
+            },
+            {
+                "address": "local",
+                "detour": "direct",
+                "tag": "dns-local"
+            },
+            {
+                "address": "rcode:\/\/success",
+                "tag": "dns-block"
+            }
+        ],
+        "rules": [
+            {
+                "domain_suffix": [
+                    ".ir"
+                ],
+                "server": "dns-direct"
+            },
+            {
+                "outbound": "direct",
+                "server": "dns-direct",
+                "rewrite_ttl": 20
+            },
+            {
+                "outbound": "any",
+                "server": "dns-direct",
+                "rewrite_ttl": 20
+            }
+        ],
+        "reverse_mapping": true,
+        "strategy": "ipv4_only",
+        "independent_cache": true
+    },
+    "inbounds": [
+        {
+            "listen": "0.0.0.0",
+            "listen_port": 6450,
+            "override_address": "8.8.8.8",
+            "override_port": 53,
+            "tag": "dns-in",
+            "type": "direct"
+        },
+        {
+            "type": "tun",
+            "tag": "tun-in",
+            "domain_strategy": "",
+            "interface_name": "tun0",
+            "inet4_address": "172.19.0.1\/30",
+            "mtu": 9000,
+            "auto_route": true,
+            "strict_route": true,
+            "stack": "system",
+            "endpoint_independent_nat": true,
+            "sniff": true,
+            "sniff_override_destination": false
+        },
+        {
+            "domain_strategy": "",
+            "listen": "0.0.0.0",
+            "listen_port": 2080,
+            "sniff": true,
+            "sniff_override_destination": false,
+            "tag": "mixed-in",
+            "type": "mixed"
+        }
+    ],
+    "outbounds": [
+        {
+            "tag": "proxy",
+            "type": "selector",
+            "outbounds": [
+                "URL-TEST",
+                "ЯΞZΛ_41 | 1",
+                "ЯΞZΛ_42 | 2",
+                "ЯΞZΛ_43 | 3",
+                "ЯΞZΛ_32 | 4",
+                "ЯΞZΛ_44 | 5",
+                "ЯΞZΛ_18 | 6",
+                "ЯΞZΛ_45 | 7",
+                "ЯΞZΛ_47 | 8",
+                "ЯΞZΛ_48 | 9",
+                "ЯΞZΛ_49 | 10",
+                "ЯΞZΛ_25 | 11",
+                "ЯΞZΛ \/1 | 12",
+                "ЯΞZΛ \/2 | 13",
+                "ЯΞZΛ \/3 | 14",
+                "ЯΞZΛ \/4 | 15",
+                "ЯΞZΛ \/5 | 16",
+                "ЯΞZΛ \/6 | 17",
+                "ЯΞZΛ \/7 | 18",
+                "ЯΞZΛ \/9 | 19",
+                "ЯΞZΛ \/10 | 20"
+            ]
+        },
+        {
+            "tag": "URL-TEST",
+            "type": "urltest",
+            "outbounds": [
+                "ЯΞZΛ_41 | 1",
+                "ЯΞZΛ_42 | 2",
+                "ЯΞZΛ_43 | 3",
+                "ЯΞZΛ_32 | 4",
+                "ЯΞZΛ_44 | 5",
+                "ЯΞZΛ_18 | 6",
+                "ЯΞZΛ_45 | 7",
+                "ЯΞZΛ_47 | 8",
+                "ЯΞZΛ_48 | 9",
+                "ЯΞZΛ_49 | 10",
+                "ЯΞZΛ_25 | 11",
+                "ЯΞZΛ \/1 | 12",
+                "ЯΞZΛ \/2 | 13",
+                "ЯΞZΛ \/3 | 14",
+                "ЯΞZΛ \/4 | 15",
+                "ЯΞZΛ \/5 | 16",
+                "ЯΞZΛ \/6 | 17",
+                "ЯΞZΛ \/7 | 18",
+                "ЯΞZΛ \/9 | 19",
+                "ЯΞZΛ \/10 | 20"
+            ],
+            "url": "https:\/\/www.gstatic.com\/generate_204",
+            "interval": "3m",
+            "tolerance": 50
+        },
+        {
+            "tag": "ЯΞZΛ_41 | 1",
+            "type": "vmess",
+            "server": "94.131.99.8",
+            "server_port": 47182,
+            "uuid": "81b2b630-8b6a-404f-b996-b12f13db5786",
+            "security": "auto",
+            "alter_id": 0,
+            "global_padding": false,
+            "authenticated_length": true,
+            "packet_encoding": "",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_42 | 2",
+            "type": "vmess",
+            "server": "188.244.117.31",
+            "server_port": 28320,
+            "uuid": "236fa6e3-683b-4c3f-a07c-56061ee393c2",
+            "security": "auto",
+            "alter_id": 0,
+            "global_padding": false,
+            "authenticated_length": true,
+            "packet_encoding": "",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_43 | 3",
+            "type": "vless",
+            "server": "77.105.167.214",
+            "server_port": 8443,
+            "uuid": "518aa910-411c-421a-9cae-7fd90ece7752",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "cdn.discordapp.com",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
+                    "short_id": ""
+                }
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_32 | 4",
+            "type": "vless",
+            "server": "151.101.3.10",
+            "server_port": 80,
+            "uuid": "cefffd1d-cc58-4560-b4d1-44f1af528f30",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/aries",
+                "headers": {
+                    "Host": "k.pl"
+                },
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_44 | 5",
+            "type": "vless",
+            "server": "109.107.190.155",
+            "server_port": 8443,
+            "uuid": "baa84a55-dddd-43b5-8270-e8328b2bab42",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "cdn.discordapp.com",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
+                    "short_id": ""
+                }
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_18 | 6",
+            "type": "vless",
+            "server": "143.110.169.66",
+            "server_port": 26329,
+            "uuid": "97a3b0e9-f44f-4dad-96af-40a14b3ae680",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "*.sourceforge.net",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "ir5yuFXmp49WTWAsoD_mxmfbPf6lROEmzcgrCpopWDc",
+                    "short_id": "7ea2155d"
+                }
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_45 | 7",
+            "type": "vless",
+            "server": "51.195.148.69",
+            "server_port": 6639,
+            "uuid": "02e490ca-6a99-4bf8-ba42-15cca3f20e6e",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "presshill.com",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "lA6wn3tUYgfJZkRzS29e1hJo38UXrL5ko6v6oQFIzB0",
+                    "short_id": "62f886757cb2e45e"
+                }
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_47 | 8",
+            "type": "vless",
+            "server": "104.21.28.62",
+            "server_port": 443,
+            "uuid": "b9ad895b-12ac-40fc-a5ac-a5b2a1285001",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "3k.pureboy.eu.org",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "3k.pureboy.eu.org"
+                },
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_48 | 9",
+            "type": "vless",
+            "server": "iranserver.com",
+            "server_port": 2096,
+            "uuid": "f4cec6cc-6177-423c-90f8-2ad9f0dd996b",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "vpnct.arvancode.eu.org",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/bShq2qgG8GnX8zqm\/",
+                "headers": {
+                    "Host": "vpnct.arvancode.eu.org"
+                },
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_49 | 10",
+            "type": "vless",
+            "server": "104.16.32.40",
+            "server_port": 443,
+            "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "baipiao406.stunning-bassoon.pages.dev",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "baipiao406.stunning-bassoon.pages.dev"
+                },
+                "max_early_data": 2048,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            }
+        },
+        {
+            "tag": "ЯΞZΛ_25 | 11",
+            "type": "vless",
+            "server": "144.126.234.182",
+            "server_port": 51697,
+            "uuid": "22f3cbcc-55b5-4d71-a3ca-9d6f3287aace",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "*.sourceforge.net",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "3KmWh8OPrAr-gBXyVdyS4IaB8DKUTtdIpbv5qvN15RY",
+                    "short_id": "c2abcb19"
+                }
+            }
+        },
+        {
+            "tag": "ЯΞZΛ \/1 | 12",
+            "type": "vless",
+            "server": "157.230.20.114",
+            "server_port": 101,
+            "uuid": "4b3708be-5f6c-4693-9c41-18573566dd3a",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "ЯΞZΛ \/2 | 13",
+            "type": "vless",
+            "server": "5.75.133.63",
+            "server_port": 41330,
+            "uuid": "2221af67-f09c-48ca-86dc-29379c88b8b3",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "ЯΞZΛ \/3 | 14",
+            "type": "vless",
+            "server": "5.75.133.63",
+            "server_port": 41854,
+            "uuid": "6278d6ad-fed7-48a1-82e3-7923948e661f",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "ЯΞZΛ \/4 | 15",
+            "type": "vless",
+            "server": "5.75.133.63",
+            "server_port": 58769,
+            "uuid": "59219122-d989-424e-83e6-50edd3fa644a",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "ЯΞZΛ \/5 | 16",
+            "type": "vless",
+            "server": "5.75.133.63",
+            "server_port": 4434,
+            "uuid": "60b6f021-cb3f-430d-bd48-e0a9a9aae14e",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "ЯΞZΛ \/6 | 17",
+            "type": "vless",
+            "server": "198.244.220.185",
+            "server_port": 27977,
+            "uuid": "5cb23796-9a99-491d-ec63-bb3fdca33a59",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "ЯΞZΛ \/7 | 18",
+            "type": "vless",
+            "server": "192.248.190.48",
+            "server_port": 8080,
+            "uuid": "2582908c-83ad-4ca2-a305-6b6856e836ae",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "ЯΞZΛ \/9 | 19",
+            "type": "vless",
+            "server": "91.193.58.4",
+            "server_port": 80,
+            "uuid": "VPNCUSTOMIZE---VPNCUSTOMIZE",
+            "flow": "xtls-rprx-vision",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/VPNCUSTOMIZE-VPNCUSTOMIZE?ed=1048",
+                "headers": {
+                    "Host": "VPNCUSTOMIZE_-V2ray.xn--4OQ36ED28D.ORG."
+                },
+                "max_early_data": 0,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            }
+        },
+        {
+            "tag": "ЯΞZΛ \/10 | 20",
+            "type": "vmess",
+            "server": "94.131.99.8",
+            "server_port": 47182,
+            "uuid": "81b2b630-8b6a-404f-b996-b12f13db5786",
+            "security": "auto",
+            "alter_id": 0,
+            "global_padding": false,
+            "authenticated_length": true,
+            "packet_encoding": "",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            }
+        },
+        {
+            "tag": "direct",
+            "type": "direct"
+        },
+        {
+            "tag": "bypass",
+            "type": "direct"
+        },
+        {
+            "tag": "block",
+            "type": "block"
+        },
+        {
+            "tag": "dns-out",
+            "type": "dns"
+        }
+    ],
+    "route": {
+        "auto_detect_interface": true,
+        "override_android_vpn": true,
+        "final": "proxy",
+        "geoip": {
+            "download_url": "https:\/\/github.com\/MiSaturo\/sing-box-geoip-ir\/releases\/latest\/download\/geoip.db",
+            "download_detour": "direct"
+        },
+        "geosite": {
+            "download_url": "https:\/\/github.com\/MasterKia\/iran-hosted-domains\/releases\/latest\/download\/iran-geosite.db",
+            "download_detour": "direct"
+        },
+        "rules": [
+            {
+                "outbound": "dns-out",
+                "port": [
+                    53
+                ]
+            },
+            {
+                "inbound": [
+                    "dns-in"
+                ],
+                "outbound": "dns-out"
+            },
+            {
+                "domain_suffix": [
+                    "ir"
+                ],
+                "outbound": "bypass"
+            },
+            {
+                "geoip": [
+                    "ir"
+                ],
+                "outbound": "bypass"
+            },
+            {
+                "geosite": [
+                    "ir"
+                ],
+                "outbound": "direct"
+            },
+            {
+                "geosite": [
+                    "other"
+                ],
+                "outbound": "direct"
+            },
+            {
+                "geosite": [
+                    "ads"
+                ],
+                "outbound": "block"
+            },
+            {
+                "ip_cidr": [
+                    "224.0.0.0\/3",
+                    "ff00::\/8"
+                ],
+                "outbound": "block",
+                "source_ip_cidr": [
+                    "224.0.0.0\/3",
+                    "ff00::\/8"
+                ]
+            }
+        ]
+    }
+}
